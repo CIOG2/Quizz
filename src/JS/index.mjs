@@ -11,5 +11,8 @@ buttonPlay.addEventListener('click', () => {
     containerHome.remove();
     setTimeout(() => {
         app.append(AlertaDeIncio());
-    }, 1000);
+        setTimeout(() => {
+            document.getElementById('containerAlert').remove();
+        } , 6010);
+    }, 100);
 });
