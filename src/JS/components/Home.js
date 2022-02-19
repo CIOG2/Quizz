@@ -19,10 +19,9 @@ function Home() {
     svgContainer.innerHTML = `<svg height="30" width="30"><polygon points="5,0 5,30 25,15" fill="white"/></svg>`
     const buttonPlay = document.createElement('button');
     buttonPlay.classList.add('home__container--button');
+    buttonPlay.id = 'buttonPlay';
     buttonPlay.append(texto, svgContainer);
-    buttonPlay.addEventListener('click', () => playGame(containerHome));
 
-    
 
     //SECION DE SONIDO
     const buttonSound= document.createElement('button');
@@ -35,6 +34,7 @@ function Home() {
     //CONTENEDOR CON LOS ELEMENTOS DEL HOME
     const containerHome = document.createElement('div');
     containerHome.classList.add('container__home');
+    containerHome.id = 'containerHome';
     containerHome.append( tituloContainer , buttonPlay , soundContainer );
     
     return containerHome;
