@@ -30,7 +30,7 @@
 
 @keyframes parpadeo2{
     0%{
-        color: var(--Tercer-Color);
+        color: var(--Cuarto-Color);
     }
     1%{
         color: transparent;
