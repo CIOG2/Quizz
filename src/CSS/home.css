@@ -1,16 +1,114 @@
 .container__home{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    flex-direction: column;
     width: 100%;
     height: 100vh;
     min-height: 500px;
+    max-width: 1500px;
+    padding-top: 10px;
 }
 
-.home__container--button{
-    width: 140px;
+
+
+/*ESTILOS DEL TITULO*/
+.home__titulo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    height: 60px;
+}
+.home__titulo-container .title{
+    font-family: sans-serif, Arial, Helvetica;
+    font-size: 5rem;
+    font-weight: bold;
+    color: var(--Cuarto-Color);
+}
+.home__titulo-container .circulo{
+    width: 50px;
     height: 50px;
+    border-radius: 50%;
+    animation: changeColor 5s infinite;
+}
+
+
+
+/*ESTILOS DEL BOTON*/
+.home__container--button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 140px;
+    height: 60px;
     background-color: var(--Tercer-Color);
     border-radius: 20px;
     border: none;
+    gap: 5px;
+    padding-left: 5px;
+}
+.home__container--button > h3{
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--Cuarto-Color);
+}
+.home__container--button > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/*ESTILOS DEL BOTON DE SONIDO*/
+.home__container--sound{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 60px;
+    margin-bottom: 15px;
+    padding-right: 15px;
+}
+
+.home__container--sound button{
+    width: 60px;
+    height: 60px;
+    background-color: var(--Cuarto-Color); 
+    border-radius: 50%;
+    border: none;
+}
+
+
+
+
+
+
+
+
+
+
+@keyframes changeColor{
+    0%{
+        background-color: yellow;
+    }
+    17%{
+        background-color: orange;
+    }
+    34%{
+        background-color: red;
+    }
+    51%{
+        background-color: #f352af;
+    }
+    68%{
+        background-color: #8e45b6;
+    }
+    85%{
+        background-color: #1576d0;
+    }
+    100%{
+        background-color: #1ec968;
+    }
 }

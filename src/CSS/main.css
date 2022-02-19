@@ -1,6 +1,8 @@
 :root{
     --Primer-Color: #222831;
+    --Segundo-Color: #393E46;
     --Tercer-Color: #FD7014;
+    --Cuarto-Color: #EEEEEE;
 }
 
 *{
@@ -19,6 +21,8 @@ body{
 
 
 #app{
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 100vh;
     min-height: 500px;
