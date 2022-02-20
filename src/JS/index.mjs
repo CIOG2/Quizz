@@ -10,18 +10,11 @@ const buttonPlay = document.getElementById('buttonPlay');
 const containerHome = document.getElementById('containerHome');
 
 
-
-
-
 const data = {
     pregunta: '¿Cuál es la capital de México?',
     opciones: ['México', 'Monterrey', 'Guadalajara', 'Ciudad de México'],
     respuesta: 'Ciudad de México'
 }
-
-
-
-
 
 
 
@@ -32,6 +25,6 @@ buttonPlay.addEventListener('click', () => {
         setTimeout(() => {
             document.getElementById('containerAlert').remove();
             app.append(GameArea(data))
-        } , 6010);
+        } , 10);
     }, 100);
 });
