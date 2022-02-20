@@ -4,7 +4,6 @@ function AlertaDeIncio() {
     const num = [5, 4, 3, 2, 1];
     for (let i = 0; i <= 5; i++) {
         setTimeout(() => {
-            console.log(i);
             if (i === 5) {
                 numero.innerHTML = 'GO!';	
             } else {

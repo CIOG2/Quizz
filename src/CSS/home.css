@@ -48,6 +48,7 @@
     border: none;
     gap: 5px;
     padding-left: 5px;
+    cursor: pointer;
 }
 .home__container--button > h3{
     font-size: 3rem;
@@ -78,6 +79,7 @@
     background-color: var(--Cuarto-Color); 
     border-radius: 50%;
     border: none;
+    cursor: pointer;
 }
 
 

@@ -1,0 +1,71 @@
+.game__area--container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-width: 1500px;
+    padding: 20px 0;
+    font-family: sans-serif;
+}
+.options__container{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr; 
+    gap: 15px;
+    width: 100%;
+    height: auto;
+    max-height: auto;
+}
+.options__container--iteam{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    height: auto;
+    min-height: 50px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: var(--Cuarto-Color);
+    box-shadow: -5px 5px 10px 0px rgb(0 0 0 / 62%);
+    transition: all 0.3s ease-in-out;
+}
+.options__container--iteam:hover{
+    cursor: pointer;
+}
+
+
+
+.options__container--iteam .letter__option{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.options__container--iteam .text__option{
+    font-size: 1.9rem;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+
+
+.respuesta__correcta{
+    background-color: rgb(0, 255, 55);
+}
+.respuesta__incorrecta{
+    background-color: red;
+}
+
+@media screen and (min-width: 700px){
+    .options__container{
+        grid-template-columns: 1fr 1fr; 
+        gap: 30px;
+    }
+    
+    .options__container--iteam{
+        min-height: 80px;
+    }
+
+    .game__area--container{
+        padding: 20px 0 40px;
+    }
+}
