@@ -7,7 +7,32 @@ const data = [
     {
         pregunta: '¿Cuál es la capital de México?',
         opciones: ['México', 'Monterrey', 'Guadalajara', 'Ciudad de México'],
-        respuesta: 'Ciudad de México'
+        respuesta: 'Ciudad de México',
+        image: 'https://viajes.nationalgeographic.com.es/medio/2019/04/08/ciudad-de-mexico_ade2cf14_800x533.jpg'
+    },
+    {
+        pregunta: '¿Cuanto es 2 + 2?',
+        opciones: ['2', '3', '4', '1'],
+        respuesta: '4',
+        image: 'https://i.ibb.co/rtPpvm2/Suma.png'
+    },
+    {
+        pregunta: '¿Cuál es la capital de México?',
+        opciones: ['México', 'Monterrey', 'Guadalajara', 'Ciudad de México'],
+        respuesta: 'Ciudad de México',
+        image: 'https://viajes.nationalgeographic.com.es/medio/2019/04/08/ciudad-de-mexico_ade2cf14_800x533.jpg'
+    },
+    {
+        pregunta: '¿Cuanto es 2 + 2?',
+        opciones: ['2', '3', '4', '1'],
+        respuesta: '4',
+        image: 'https://i.ibb.co/rtPpvm2/Suma.png'
+    },
+    {
+        pregunta: '¿Cuál es la capital de México?',
+        opciones: ['México', 'Monterrey', 'Guadalajara', 'Ciudad de México'],
+        respuesta: 'Ciudad de México',
+        image: 'https://viajes.nationalgeographic.com.es/medio/2019/04/08/ciudad-de-mexico_ade2cf14_800x533.jpg'
     },
     {
         pregunta: '¿Cuanto es 2 + 2?',
@@ -24,6 +49,7 @@ app.append(Home());
 const buttonPlay = document.getElementById('buttonPlay');
 const containerHome = document.getElementById('containerHome');
 const score = 0;
+let contador = 0;
 
 
 let segundos = 100/30;
@@ -51,10 +77,10 @@ buttonPlay.addEventListener('click', () => {
         app.append(AlertaDeIncio());
         setTimeout(() => {
             document.getElementById('containerAlert').remove();
-            app.append(GameArea(data[1]));
+            app.append(GameArea(data));
             intervalo = setInterval(tiempo, 1000);
             tiempo();
-        } , 10);
+        } , 6010);
     }, 100);
 });
 
@@ -68,10 +94,29 @@ const respuestaCorrecta = () => {
     }
 }
 
-
 const respuestaIncorrecta = () => {
     width = width + 10;
 }
 
 
-export { respuestaCorrecta , respuestaIncorrecta };
+const CambiarPregunta = () => {
+    const pregunta = document.getElementById('pregunta');
+    const image = document.getElementById('image');
+    const option1 = document.getElementById('option1');
+    const option2 = document.getElementById('option2');
+    const option3 = document.getElementById('option3');
+    const option4 = document.getElementById('option4');
+
+    contador++;
+
+    pregunta.textContent = data[contador].pregunta;
+    image.src = data[contador].image;
+    option1.textContent = data[contador].opciones[0];
+    option2.textContent = data[contador].opciones[1];
+    option3.textContent = data[contador].opciones[2];
+    option4.textContent = data[contador].opciones[3];
+    console.log( data[contador].opciones[0]);
+}
+
+
+export { respuestaCorrecta, respuestaIncorrecta, CambiarPregunta };

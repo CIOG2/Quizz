@@ -1,7 +1,9 @@
-import { respuestaCorrecta, respuestaIncorrecta } from '../index.mjs';
+import { respuestaCorrecta, respuestaIncorrecta, CambiarPregunta } from '../index.mjs';
 import { TimeBar } from './TimeBar.js';
 
+
 let yaEligio = false;
+let contador = 0;
 
 function GameArea(data) {
 
@@ -17,7 +19,7 @@ function GameArea(data) {
 
         const textOption = document.createElement('p');
         textOption.classList.add('text__option');
-        textOption.textContent = data.opciones[i];
+        textOption.textContent = data[0].opciones[i];
         textOption.id = `option${i+1}`
         
         
@@ -26,12 +28,24 @@ function GameArea(data) {
         option.addEventListener('click', () => {
             if(!yaEligio){
                 yaEligio = true;
-                if (textOption.textContent === data.respuesta) {
+                if (textOption.textContent === data[contador].respuesta) {
                     option.classList.add('respuesta__correcta');
                     respuestaCorrecta();
+                    setTimeout(() => {
+                        option.classList.remove('respuesta__correcta');
+                        yaEligio = false;
+                        contador++;
+                        CambiarPregunta();
+                    }, 1000);
                 } else {
                     option.classList.add('respuesta__incorrecta');
                     respuestaIncorrecta();
+                    setTimeout(() => {
+                        option.classList.remove('respuesta__incorrecta');
+                        yaEligio = false;
+                        contador++;
+                        CambiarPregunta();
+                    }, 1000);
                 }
             }
         })
@@ -45,12 +59,12 @@ function GameArea(data) {
 
     const pregunta = document.createElement('h2')
     pregunta.classList.add('pregunta__text');
-    pregunta.textContent = data.pregunta;
+    pregunta.textContent = data[0].pregunta;
     pregunta.id = 'pregunta';
     
     const image = document.createElement('img');
     image.classList.add('image__question');
-    image.src = data.image;
+    image.src = data[0].image;
     image.id = 'image';
 
     const containerSuperior = document.createElement('div');
