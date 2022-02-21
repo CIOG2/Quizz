@@ -1,3 +1,4 @@
+import { respuestaCorrecta, respuestaIncorrecta } from '../index.mjs';
 import { TimeBar } from './TimeBar.js';
 
 let yaEligio = false;
@@ -27,10 +28,10 @@ function GameArea(data) {
                 yaEligio = true;
                 if (textOption.textContent === data.respuesta) {
                     option.classList.add('respuesta__correcta');
-                    
+                    respuestaCorrecta();
                 } else {
                     option.classList.add('respuesta__incorrecta');
-                    
+                    respuestaIncorrecta();
                 }
             }
         })
@@ -40,16 +41,27 @@ function GameArea(data) {
 
     
     
-    const nomas = document.createElement('h1')
-    nomas.textContent = data.pregunta;
-    
-    
     const timeBar = TimeBar();
+
+    const pregunta = document.createElement('h2')
+    pregunta.classList.add('pregunta__text');
+    pregunta.textContent = data.pregunta;
+    pregunta.id = 'pregunta';
+    
+    const image = document.createElement('img');
+    image.classList.add('image__question');
+    image.src = data.image;
+    image.id = 'image';
+
+    const containerSuperior = document.createElement('div');
+    containerSuperior.classList.add('container__superior');
+    containerSuperior.append( timeBar, pregunta, image);
+
     
     const gameAreaContainer = document.createElement('div');
     gameAreaContainer.classList.add('game__area--container');
     gameAreaContainer.id = 'gameArea';
-    gameAreaContainer.append( timeBar, nomas, optionAnswers );
+    gameAreaContainer.append( containerSuperior, optionAnswers );
     
     return gameAreaContainer;
 }

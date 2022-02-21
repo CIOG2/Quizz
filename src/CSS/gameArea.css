@@ -8,6 +8,29 @@
     padding-bottom: 20px;
     font-family: sans-serif;
 }
+
+
+.container__superior{
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+.pregunta__text{
+    font-size: 3rem;
+    color: var(--Cuarto-Color);
+    margin: 20px 0;
+}
+
+.image__question{
+    width: 50%;
+    height: auto;
+    max-width: 300px;
+    max-height: 300px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+
 .options__container{
     display: grid;
     justify-items: center;
@@ -33,8 +56,6 @@
 .options__container--iteam:hover{
     cursor: pointer;
 }
-
-
 
 .options__container--iteam .letter__option{
     font-size: 2rem;
