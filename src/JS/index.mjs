@@ -49,6 +49,6 @@ buttonPlay.addEventListener('click', () => {
             app.append(GameArea(data[1]));
             intervalo = setInterval(tiempo, 1000);
             tiempo();
-        } , 6010);
+        } , 10);
     }, 100);
 });
