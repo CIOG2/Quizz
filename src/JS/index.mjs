@@ -1,6 +1,7 @@
 import { Home } from "./components/Home.js";
 import { AlertaDeIncio } from './components/AlertaDeInicio.js';
 import { GameArea } from "./components/GameArea.js";
+import { GameOver } from "./components/GameOver.js";
 
 const data = [
     {
@@ -23,7 +24,7 @@ const buttonPlay = document.getElementById('buttonPlay');
 const containerHome = document.getElementById('containerHome');
 
 
-let segundos = 100/30;
+let segundos = 100/500;
 let intervalo;
 let width = 0;
 
@@ -35,7 +36,10 @@ function tiempo() {
         width += segundos;
     } else {
         clearInterval(intervalo);
-        document.getElementById('gameArea').remove();
+        setTimeout(() => {
+            document.getElementById('gameArea').remove();
+        }, 1000);
+        app.appendChild(GameOver());
     }
 }
 
