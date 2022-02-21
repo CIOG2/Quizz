@@ -1,0 +1,25 @@
+.barra__tiempo--container{
+    position: relative;
+    width: 100%;
+    height: 30px;
+}
+
+.barra__tiempo--color{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, #ff0000, #ff2d00, #ff4200, #fe5202, #fe6008, #fa7500, #f58700, #ef9700, #deb200, #c0cd00, #90e700, #00ff37);
+    border-bottom: 1px solid white;
+}
+
+.barra__tiempo{
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    right: 0;
+    z-index: 1;
+    background-color: var(--Primer-Color);
+    border-bottom: 1px solid white;
+    animation: progress 30s linear infinite;
+    transition: all 1s linear;
+}
