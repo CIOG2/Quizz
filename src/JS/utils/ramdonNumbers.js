@@ -11,3 +11,5 @@ const ramdonNumbers = (list) => {
     
     return newList;
 }
+
+export { ramdonNumbers };

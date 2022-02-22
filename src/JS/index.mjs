@@ -2,45 +2,8 @@ import { Home } from "./components/Home.js";
 import { AlertaDeIncio } from './components/AlertaDeInicio.js';
 import { GameArea } from "./components/GameArea.js";
 import { GameOver } from "./components/GameOver.js";
-
-const data = [
-    {
-        pregunta: '¿Cuál es la capital de México?',
-        opciones: ['México', 'Monterrey', 'Guadalajara', 'Ciudad de México'],
-        respuesta: 'Ciudad de México',
-        image: 'https://viajes.nationalgeographic.com.es/medio/2019/04/08/ciudad-de-mexico_ade2cf14_800x533.jpg'
-    },
-    {
-        pregunta: '¿Cuanto es 2 + 2?',
-        opciones: ['2', '3', '4', '1'],
-        respuesta: '4',
-        image: 'https://i.ibb.co/rtPpvm2/Suma.png'
-    },
-    {
-        pregunta: '¿Cuál es la capital de México?',
-        opciones: ['México', 'Monterrey', 'Guadalajara', 'Ciudad de México'],
-        respuesta: 'Ciudad de México',
-        image: 'https://viajes.nationalgeographic.com.es/medio/2019/04/08/ciudad-de-mexico_ade2cf14_800x533.jpg'
-    },
-    {
-        pregunta: '¿Cuanto es 2 + 2?',
-        opciones: ['2', '3', '4', '1'],
-        respuesta: '4',
-        image: 'https://i.ibb.co/rtPpvm2/Suma.png'
-    },
-    {
-        pregunta: '¿Cuál es la capital de México?',
-        opciones: ['México', 'Monterrey', 'Guadalajara', 'Ciudad de México'],
-        respuesta: 'Ciudad de México',
-        image: 'https://viajes.nationalgeographic.com.es/medio/2019/04/08/ciudad-de-mexico_ade2cf14_800x533.jpg'
-    },
-    {
-        pregunta: '¿Cuanto es 2 + 2?',
-        opciones: ['2', '3', '4', '1'],
-        respuesta: '4',
-        image: 'https://i.ibb.co/rtPpvm2/Suma.png'
-    },
-];
+import { ramdonNumbers } from './utils/ramdonNumbers.js';
+import { data } from './data/preguntas.js';
 
 
 const app = document.getElementById('app');
@@ -108,14 +71,15 @@ const CambiarPregunta = () => {
     const option4 = document.getElementById('option4');
 
     contador++;
+    let nuevoOrden = ramdonNumbers(data[contador].opciones);
 
     pregunta.textContent = data[contador].pregunta;
     image.src = data[contador].image;
-    option1.textContent = data[contador].opciones[0];
-    option2.textContent = data[contador].opciones[1];
-    option3.textContent = data[contador].opciones[2];
-    option4.textContent = data[contador].opciones[3];
-    console.log( data[contador].opciones[0]);
+    option1.textContent = nuevoOrden[0];
+    option2.textContent = nuevoOrden[1];
+    option3.textContent = nuevoOrden[2];
+    option4.textContent = nuevoOrden[3];
+    console.log(data[contador].opciones[0]);
 }
 
 
