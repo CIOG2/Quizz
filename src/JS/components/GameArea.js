@@ -1,4 +1,4 @@
-import { respuestaCorrecta, respuestaIncorrecta, CambiarPregunta } from '../index.mjs';
+import { respuestaCorrecta, respuestaIncorrecta, CambiarPregunta, } from '../index.mjs';
 import { TimeBar } from './TimeBar.js';
 
 

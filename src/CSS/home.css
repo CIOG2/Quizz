@@ -20,6 +20,8 @@
     gap: 15px;
     width: 100%;
     height: 60px;
+    user-select: none;
+
 }
 .home__titulo-container .title{
     font-family: sans-serif, Arial, Helvetica;
@@ -54,6 +56,7 @@
     font-size: 3rem;
     font-weight: 700;
     color: var(--Cuarto-Color);
+    user-select: none;
 }
 .home__container--button > div{
     display: flex;

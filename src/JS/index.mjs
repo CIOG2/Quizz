@@ -5,6 +5,7 @@ import { GameOver } from "./components/GameOver.js";
 import { ramdonNumbers } from './utils/ramdonNumbers.js';
 import { data } from './data/preguntas.js';
 
+let datos = ramdonNumbers(data);
 
 const app = document.getElementById('app');
 app.append(Home());
@@ -40,7 +41,7 @@ buttonPlay.addEventListener('click', () => {
         app.append(AlertaDeIncio());
         setTimeout(() => {
             document.getElementById('containerAlert').remove();
-            app.append(GameArea(data));
+            app.append(GameArea(datos));
             intervalo = setInterval(tiempo, 1000);
             tiempo();
         } , 6010);
@@ -51,7 +52,6 @@ buttonPlay.addEventListener('click', () => {
 const respuestaCorrecta = () => {
     if (width <= 20) {
         width = 0;
-        console.log('correcto');
     } else {
         width = width - 20;
     }
@@ -71,16 +71,15 @@ const CambiarPregunta = () => {
     const option4 = document.getElementById('option4');
 
     contador++;
-    let nuevoOrden = ramdonNumbers(data[contador].opciones);
+    let nuevoOrden = ramdonNumbers(datos[contador].opciones);
 
-    pregunta.textContent = data[contador].pregunta;
-    image.src = data[contador].image;
+    pregunta.textContent = datos[contador].pregunta;
+    image.src = datos[contador].image;
     option1.textContent = nuevoOrden[0];
     option2.textContent = nuevoOrden[1];
     option3.textContent = nuevoOrden[2];
     option4.textContent = nuevoOrden[3];
-    console.log(data[contador].opciones[0]);
 }
 
 
-export { respuestaCorrecta, respuestaIncorrecta, CambiarPregunta };
+export { respuestaCorrecta, respuestaIncorrecta, CambiarPregunta , datos};

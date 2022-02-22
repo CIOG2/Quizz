@@ -41,6 +41,7 @@ body{
     font-weight: extra-bold;
     color: var(--Cuarto-Color);
     text-align: center;
+    user-select: none;
 }
 
 
