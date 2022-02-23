@@ -1,9 +1,13 @@
-import { respuestaCorrecta, respuestaIncorrecta, CambiarPregunta, } from '../index.mjs';
+import { respuestaCorrectaTime, respuestaIncorrectaTime, CambiarPregunta, } from '../index.mjs';
+import { RespuestaCorrecta } from './RespuestaCorrecta.js';
+import { RespuestaIncorrecta } from './RespuestaIncorrecta.js';
 import { TimeBar } from './TimeBar.js';
 
 
 let yaEligio = false;
 let contador = 0;
+const app = document.getElementById('app');
+
 
 function GameArea(data) {
 
@@ -29,23 +33,31 @@ function GameArea(data) {
             if(!yaEligio){
                 yaEligio = true;
                 if (textOption.textContent === data[contador].respuesta) {
-                    option.classList.add('respuesta__correcta');
-                    respuestaCorrecta();
+                    option.classList.add('respuesta__seleccionada');
+                    respuestaCorrectaTime();
                     setTimeout(() => {
-                        option.classList.remove('respuesta__correcta');
+                        app.appendChild(RespuestaCorrecta());
+                    }, 500);
+                    setTimeout(() => {
+                        app.removeChild(app.lastChild);
+                        option.classList.remove('respuesta__seleccionada');
                         yaEligio = false;
                         contador++;
                         CambiarPregunta();
-                    }, 1000);
+                    }, 1500);
                 } else {
-                    option.classList.add('respuesta__incorrecta');
-                    respuestaIncorrecta();
+                    option.classList.add('respuesta__seleccionada');
+                    respuestaIncorrectaTime();
                     setTimeout(() => {
-                        option.classList.remove('respuesta__incorrecta');
+                        app.appendChild(RespuestaIncorrecta());
+                    }, 500);
+                    setTimeout(() => {
+                        app.removeChild(app.lastChild);
+                        option.classList.remove('respuesta__seleccionada');
                         yaEligio = false;
                         contador++;
                         CambiarPregunta();
-                    }, 1000);
+                    }, 1500);
                 }
             }
         })

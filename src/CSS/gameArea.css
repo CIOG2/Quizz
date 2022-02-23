@@ -70,11 +70,8 @@
 
 
 
-.respuesta__correcta{
-    background-color: #00ff37;
-}
-.respuesta__incorrecta{
-    background-color: red;
+.respuesta__seleccionada{
+    background-color: var(--Tercer-Color);
 }
 
 @media screen and (min-width: 700px){
