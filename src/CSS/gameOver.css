@@ -4,7 +4,7 @@ body{
 
 
 .game__over--ontainer{
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,6 +12,7 @@ body{
     width: 100%;
     height: 100%;
     z-index: 10;
+    top: 0;
 }
 
 

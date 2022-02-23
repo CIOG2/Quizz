@@ -31,7 +31,7 @@ function tiempo() {
         setTimeout(() => {
             document.getElementById('gameArea').remove();
         }, 1000);
-        app.append(GameOver());
+        document.body.append(GameOver());
     }
 }
 
