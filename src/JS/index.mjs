@@ -4,11 +4,6 @@ import { GameArea } from "./components/GameArea.js";
 import { GameOver } from "./components/GameOver.js";
 import { ramdonNumbers } from './utils/ramdonNumbers.js';
 import { data } from './data/preguntas.js';
-import { RespuestaCorrecta } from './components/RespuestaCorrecta.js';
-import { RespuestaIncorrecta } from './components/RespuestaIncorrecta.js';
-
-
-
 
 
 let datos = ramdonNumbers(data);
@@ -19,7 +14,7 @@ app.append(Home());
 
 const buttonPlay = document.getElementById('buttonPlay');
 const containerHome = document.getElementById('containerHome');
-const score = 0;
+let score = 0;
 let contador = 0;
 
 
@@ -62,6 +57,7 @@ const respuestaCorrectaTime = () => {
     } else {
         width = width - 20;
     }
+    score++;
 }
 
 const respuestaIncorrectaTime = () => {
@@ -89,4 +85,4 @@ const CambiarPregunta = () => {
 }
 
 
-export { respuestaCorrectaTime, respuestaIncorrectaTime, CambiarPregunta , datos};
+export { respuestaCorrectaTime, respuestaIncorrectaTime, CambiarPregunta, datos, score};
