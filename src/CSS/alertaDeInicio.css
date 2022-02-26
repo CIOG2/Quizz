@@ -9,7 +9,6 @@
 }
 
 .container__alert .numero{
-    font-family: sans-serif;
     color: var(--Cuarto-Color, white);
     font-size: 15rem;
     font-weight: extra-bold;

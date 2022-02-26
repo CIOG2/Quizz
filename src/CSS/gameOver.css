@@ -37,7 +37,6 @@ body{
 }
 
 .game__over--text{
-    font-family: sans-serif;
     font-size: 7rem;
     font-weight: extra-bold;
     color: var(--Cuarto-Color);

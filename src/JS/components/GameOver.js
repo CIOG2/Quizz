@@ -22,6 +22,7 @@ function GameOver() {
 
     const GameOverContainer = document.createElement('div');
     GameOverContainer.classList.add('game__over--ontainer');
+    GameOverContainer.id = 'gameOver';
     GameOverContainer.append( parteSuperior, parteInferior );
 
     return GameOverContainer;

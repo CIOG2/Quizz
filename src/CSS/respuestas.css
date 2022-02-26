@@ -23,7 +23,6 @@
 }
 
 .answer-correct p{
-    font-family: sans-serif;
     color: white;
     font-size: 90px;
     font-weight: bold;
@@ -62,7 +61,6 @@
     transition: all .3s linear;
 }
 .answer-incorrect p{
-    font-family: sans-serif;
     color: white;
     font-size: 90px;
     font-weight: bold;
