@@ -1,6 +1,3 @@
-import { localStorage } from '../utils/localStorage.js';
-
-
 let storage = [];
 
 
@@ -17,18 +14,16 @@ let newStorage = storage.sort((a, b) => {
     return b.score - a.score;
 });
 
-
-const Score = (puntaje) => {
+const Score = () => {
     
-    console.log("puntaje final ",puntaje);
 
     const ListaRecords = document.createElement('ul')
     ListaRecords.classList.add('lista__records')
 
     const title = document.createElement('h2')
     title.classList.add('score__title');
-    title.textContent = 'SCORES';
     
+
     newStorage.forEach((item) => {
         
         const nombre = document.createElement('h3');
@@ -61,9 +56,17 @@ const Score = (puntaje) => {
 
     const containerScore = document.createElement('div');
     containerScore.classList.add('container__Score');
-    containerScore.append( title, ListaRecords, retryButton );
-
-    return containerScore;
+    
+    
+    if (newStorage.length >= 1) {
+        title.textContent = 'SCORES';
+        containerScore.append( title, ListaRecords, retryButton );
+        return containerScore;
+    } else {
+        title.textContent = 'Repetir partida';
+        containerScore.append( title, retryButton );
+        return containerScore;     
+    }     
 };
 
 export { Score };

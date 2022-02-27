@@ -19,7 +19,7 @@ let puntaje = 0;
 let contador = 0;
 
 
-let segundos = 100/30;
+let segundos = 100/1;
 let intervalo;
 let width = 0;
 
@@ -51,7 +51,7 @@ buttonPlay.addEventListener('click', () => {
             app.append(GameArea(datos));
             intervalo = setInterval(tiempo, 1000);
             tiempo();
-        } , 6010);
+        } , 10);
     }, 100);
 });
 
