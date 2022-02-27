@@ -5,6 +5,8 @@ import { GameOver } from "./components/GameOver.js";
 import { ramdonNumbers } from './utils/ramdonNumbers.js';
 import { data } from './data/preguntas.js';
 import { Score } from "./components/Score.js";
+import { NuevoRecord } from './components/NuevoRecord.js';
+
 
 
 let datos = ramdonNumbers(data);
@@ -19,7 +21,7 @@ let puntaje = 0;
 let contador = 0;
 
 
-let segundos = 100/1;
+let segundos = 100/30;
 let intervalo;
 let width = 0;
 
@@ -37,7 +39,12 @@ function tiempo() {
         app.append(GameOver());
         setTimeout(() => {
             document.getElementById('gameOver').remove();
-            app.append(Score(puntaje));
+            
+            if (puntaje >= 1) {
+                app.append(NuevoRecord());
+            } else{    
+                app.append(Score());
+            }
         }, 1000);
     }
 }
