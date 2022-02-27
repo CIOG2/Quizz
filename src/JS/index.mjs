@@ -8,23 +8,27 @@ import { Score } from "./components/Score.js";
 import { NuevoRecord } from './components/NuevoRecord.js';
 
 
-
+//Paso los datos para que se ordenen aleatoriamente
 let datos = ramdonNumbers(data);
 
+//Elementos del DOM donde se va a renderizar el juego
 const app = document.getElementById('app');
 app.append(Home());
 
-
+//Boton de se agarran del DOM
 const buttonPlay = document.getElementById('buttonPlay');
 const containerHome = document.getElementById('containerHome');
-let puntaje = 0;
-let contador = 0;
+
+//Variables que cambian su valor a lo largo del juego 
+let puntaje = 0; //Respuestas correctas del juego
+let contador = 0; //Contador de preguntas para saber que pregunta se esta mostrando
+const segundos = 100/30; //Tiempo de juego en segundos
+let intervalo; //intervalo de tiempo para el juego
+let width = 0; //width que cambia de tamaño que se va a mostrar en la barra de tiempo
 
 
-let segundos = 100/30;
-let intervalo;
-let width = 0;
 
+//Funcion que cambia el la barra de tiempo (width), y los segundos restantes
 function tiempo() {
     let barra = document.getElementById('barra__tiempo');
 
@@ -39,7 +43,8 @@ function tiempo() {
         app.append(GameOver());
         setTimeout(() => {
             document.getElementById('gameOver').remove();
-            
+
+            //si el puntaje es mayor a los record guardados, se muestra el modal de nuevo record
             if (puntaje >= 1) {
                 app.append(NuevoRecord());
             } else{    
@@ -49,6 +54,7 @@ function tiempo() {
     }
 }
 
+//Evento del boton de play que cambia el estado de la pagina y comienza el juego
 buttonPlay.addEventListener('click', () => {
     containerHome.remove();
     setTimeout(() => {
@@ -56,6 +62,7 @@ buttonPlay.addEventListener('click', () => {
         setTimeout(() => {
             document.getElementById('containerAlert').remove();
             app.append(GameArea(datos));
+            //funcion que se ejecuta cada segundo
             intervalo = setInterval(tiempo, 1000);
             tiempo();
         } , 10);
@@ -63,21 +70,23 @@ buttonPlay.addEventListener('click', () => {
 });
 
 
+//Funcion de disminulle el valor del width de la barra de tiempo
 const respuestaCorrectaTime = () => {
     if (width <= 20) {
         width = 0;
     } else {
         width = width - 20;
     }
+    //Se aumenta el puntaje porque la respuesta es correcta
     puntaje++;
-    console.log(puntaje);
 }
 
+//Funcion incrementa el valor del width de la barra de tiempo
 const respuestaIncorrectaTime = () => {
     width = width + 10;
 }
 
-
+//funcion que cambia las preguntas
 const CambiarPregunta = () => {
     const pregunta = document.getElementById('pregunta');
     const image = document.getElementById('image');
