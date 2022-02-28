@@ -35,10 +35,10 @@ function GameArea(data) {
                 if (textOption.textContent === data[contador].respuesta) {
                     option.classList.add('respuesta__seleccionada');
                     respuestaCorrectaTime();
-                    setTimeout(() => {
-
-                        
-                        document.getElementById('audio').play();
+                    setTimeout(() => {                        
+                        let audio = document.getElementById('check');
+                        audio.volume = 0.2;
+                        audio.play();;
                         app.appendChild(RespuestaCorrecta());
                     }, 500);
                     setTimeout(() => {
@@ -52,6 +52,9 @@ function GameArea(data) {
                     option.classList.add('respuesta__seleccionada');
                     respuestaIncorrectaTime();
                     setTimeout(() => {
+                        let audio = document.getElementById('error');
+                        audio.volume = 0.2;
+                        audio.play();
                         app.appendChild(RespuestaIncorrecta());
                     }, 500);
                     setTimeout(() => {
