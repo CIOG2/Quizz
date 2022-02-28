@@ -50,13 +50,16 @@ function tiempo() {
             } else{    
                 app.append(Score());
             }
-        }, 1000);
+        }, 3000);
     }
 }
 
 //Evento del boton de play que cambia el estado de la pagina y comienza el juego
 buttonPlay.addEventListener('click', () => {
     containerHome.remove();
+    let audio = document.getElementById('main');
+    audio.volume = 0.1;
+    audio.play();
     setTimeout(() => {
         app.append(AlertaDeIncio());
         setTimeout(() => {
