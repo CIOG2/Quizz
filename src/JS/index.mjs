@@ -65,7 +65,7 @@ buttonPlay.addEventListener('click', () => {
             //funcion que se ejecuta cada segundo
             intervalo = setInterval(tiempo, 1000);
             tiempo();
-        } , 10);
+        } , 6010);
     }, 100);
 });
 

@@ -36,6 +36,9 @@ function GameArea(data) {
                     option.classList.add('respuesta__seleccionada');
                     respuestaCorrectaTime();
                     setTimeout(() => {
+
+                        
+                        document.getElementById('audio').play();
                         app.appendChild(RespuestaCorrecta());
                     }, 500);
                     setTimeout(() => {
