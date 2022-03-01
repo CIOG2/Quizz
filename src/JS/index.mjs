@@ -47,7 +47,7 @@ function tiempo() {
             //Se traen los valores del localStorage
             const storage = localStorage().get("QuizzGame");
             //Record actual se iguala a 0 por que no hay record
-            let recordActual = 0;
+            let recordActual = 1;
             //Si el localStorage tiene datos se pone el puntaje mas alto
             if (storage) {
                 recordActual = storage[0].score;
