@@ -44,10 +44,6 @@ function tiempo() {
         setTimeout(() => {
             document.getElementById('gameOver').remove();
 
-            //Se guarda el nuevo record    
-            const storage = localStorage().get("QuizzGame");
-            const puntajeMasAlto = storage[0].score;
-
             //Se traen los valores del localStorage
             const storage = localStorage().get("QuizzGame");
             //Record actual se iguala a 0 por que no hay record
