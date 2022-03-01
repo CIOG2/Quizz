@@ -13,15 +13,15 @@ const localStorage = () => {
 }
 
 //Funcion que registra un nuevo record
-const NuevoRecord = (record) => {
+const NewScore = (name, score) => {
 
     //Data extrae los valores del localStorage
     const data = localStorage().get('QuizzGame');
     
     //Se crea un objeto con los datos que vienen como parametro
     const objeto = {
-        name: record[0].toUpperCase(),
-        score: record[1],
+        name: name.toUpperCase(),
+        score: score,
     };
 
     //Si ya tiene un record, se agrega el nuevo record
@@ -38,4 +38,4 @@ const NuevoRecord = (record) => {
     }
 }
 
-export { localStorage , NuevoRecord };
+export { localStorage , NewScore };

@@ -6,6 +6,7 @@ import { ramdonNumbers } from './utils/ramdonNumbers.js';
 import { data } from './data/preguntas.js';
 import { Score } from "./components/Score.js";
 import { localStorage } from './utils/localStorage.js';
+import { NuevoRecord } from './components/NuevoRecord.js';
 
 
 //Paso los datos para que se ordenen aleatoriamente
