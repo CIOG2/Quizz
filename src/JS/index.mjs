@@ -5,7 +5,7 @@ import { GameOver } from "./components/GameOver.js";
 import { ramdonNumbers } from './utils/ramdonNumbers.js';
 import { data } from './data/preguntas.js';
 import { Score } from "./components/Score.js";
-import { NuevoRecord, localStorage } from './utils/localStorage.js';
+import { localStorage } from './utils/localStorage.js';
 
 
 //Paso los datos para que se ordenen aleatoriamente
@@ -44,10 +44,24 @@ function tiempo() {
         setTimeout(() => {
             document.getElementById('gameOver').remove();
 
-            //si el puntaje es mayor a los record guardados, se muestra el modal de nuevo record
-            if (puntaje >= 1) {
+            //Se guarda el nuevo record    
+            const storage = localStorage().get("QuizzGame");
+            const puntajeMasAlto = storage[0].score;
+
+            //Se traen los valores del localStorage
+            const storage = localStorage().get("QuizzGame");
+            //Record actual se iguala a 0 por que no hay record
+            let recordActual = 0;
+            //Si el localStorage tiene datos se pone el puntaje mas alto
+            if (storage) {
+                recordActual = storage[0].score;
+            }
+   
+            //Si el puntaje es mayor o igual al recordActual, se muestra el modal de nuevo record para guardarlo
+            if (puntaje >= recordActual) {
                 app.append(NuevoRecord());
             } else{    
+                //Si no, se muestra los ultimos record
                 app.append(Score());
             }
         }, 3000);

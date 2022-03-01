@@ -1,7 +1,7 @@
-
+import { localStorage } from "../utils/localStorage.js";
 
 const Score = () => {
-    
+    const storage = localStorage().get("QuizzGame");
 
     const ListaRecords = document.createElement('ul')
     ListaRecords.classList.add('lista__records')
@@ -10,7 +10,7 @@ const Score = () => {
     title.classList.add('score__title');
     
 
-    newStorage.forEach((item) => {
+    storage.forEach((item) => {
         
         const nombre = document.createElement('h3');
         nombre.classList.add('lista__records--iteam-name');
@@ -44,7 +44,7 @@ const Score = () => {
     containerScore.classList.add('container__Score');
     
     
-    if (newStorage.length >= 1) {
+    if (storage.length >= 1) {
         title.textContent = 'SCORES';
         containerScore.append( title, ListaRecords, retryButton );
         return containerScore;
