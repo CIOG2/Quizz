@@ -5,7 +5,7 @@ import { GameOver } from "./components/GameOver.js";
 import { ramdonNumbers } from './utils/ramdonNumbers.js';
 import { data } from './data/preguntas.js';
 import { Score } from "./components/Score.js";
-import { NuevoRecord } from './components/NuevoRecord.js';
+import { NuevoRecord, localStorage } from './utils/localStorage.js';
 
 
 //Paso los datos para que se ordenen aleatoriamente

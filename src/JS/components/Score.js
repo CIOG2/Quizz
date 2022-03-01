@@ -1,18 +1,4 @@
-let storage = [];
 
-
-for (let i = 0; i < window.localStorage.length; i++) {
-    let name = window.localStorage.key(i);
-    let score = window.localStorage.getItem(name);
-    storage.push({
-        name,
-        score
-    });
-}
-//ordenar de mayor a menor los puntajes
-let newStorage = storage.sort((a, b) => {
-    return b.score - a.score;
-});
 
 const Score = () => {
     
