@@ -1,4 +1,4 @@
-import { localStorage } from '../utils/localStorage.js';
+import { ModalRecord } from './ModalRecord.js'; 
 
 const NuevoRecord = (score) => {
     //Se obtiene el valor actual del tamaño de la pantalla
@@ -42,7 +42,7 @@ const NuevoRecord = (score) => {
     boton.id = 'botonGuardar';
     boton.textContent = 'Guardar record';
     boton.addEventListener('click', () => {
-        console.log('click');
+        ModalRecord(score);
     });
     
 
