@@ -2,7 +2,6 @@ body{
     overflow-X: hidden;
 }
 
-
 .game__over--ontainer{
     position: fixed;
     display: flex;
@@ -43,11 +42,6 @@ body{
     text-align: center;
     user-select: none;
 }
-
-
-
-
-
 
 
 

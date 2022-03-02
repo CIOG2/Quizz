@@ -30,13 +30,6 @@
 
 
 
-
-
-
-
-
-
-
 .container__alert--answer-incorrect{
     position: fixed;
     display: flex;
@@ -65,14 +58,6 @@
     font-size: 90px;
     font-weight: bold;
 }
-
-
-
-
-
-
-
-
 
 
 

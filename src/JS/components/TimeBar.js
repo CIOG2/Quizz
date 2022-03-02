@@ -14,8 +14,4 @@ function TimeBar() {
     return barraDeTiempo;
 }
 
-
-
-
-
 export { TimeBar };

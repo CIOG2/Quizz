@@ -25,7 +25,7 @@ const data = [
     },
     {
         pregunta: '¿En que año llegó el hombre a la luna?',
-        opciones: ['20 de julio de 1958', '20 de julio de 1958', '20 de julio de 1969', '20 de julio de 1959'],
+        opciones: ['20 de julio de 1958', '20 de julio de 1959', '20 de julio de 1969', '20 de julio de 1959'],
         respuesta: '20 de julio de 1969',
         image: 'https://arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/45XRPL3JRRH5TGBHZCWEL6HC3M.jpg'
     },

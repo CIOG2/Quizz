@@ -55,8 +55,9 @@ function tiempo() {
             }
    
             //Si el puntaje es mayor o igual al recordActual, se muestra el modal de nuevo record para guardarlo
-            if (puntaje >= recordActual) {
-                app.append(NuevoRecord());
+            // if (puntaje >= recordActual) {
+            if (puntaje >= 1) {
+                app.append(NuevoRecord(puntaje));
             } else{    
                 //Si no, se muestra los ultimos record
                 app.append(Score());

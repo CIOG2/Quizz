@@ -9,7 +9,6 @@ function Home() {
     const tituloContainer = document.createElement('div');
     tituloContainer.classList.add('home__titulo-container');
     tituloContainer.append(titulo, circulo);
-
     
 
     //BOTON PLAY
@@ -28,7 +27,6 @@ function Home() {
     const soundContainer = document.createElement('div');
     soundContainer.classList.add('home__container--sound');
     soundContainer.append(buttonSound);
-
     
 
     //CONTENEDOR CON LOS ELEMENTOS DEL HOME
