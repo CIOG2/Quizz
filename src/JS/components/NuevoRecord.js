@@ -25,15 +25,34 @@ const NuevoRecord = (score) => {
                 document.getElementById('record').innerHTML = i + 1;
             }, 200 * i);
         }
+        setTimeout(() => {
+            document.getElementById('anotherText').style.color = '#EEEEEE';
+            document.getElementById('anotherText').style.textShadow = '-2px 2px 10px black';
+            document.getElementById('botonGuardar').style.display = 'block';
+        }, 200 * (score + 1));
     }, 1000);
 
+    const anotherText = document.createElement('p');
+    anotherText.classList.add('nuevo__record--anotherText');
+    anotherText.id = 'anotherText';
+    anotherText.textContent = 'Preguntas correctas';
+
+    const boton = document.createElement('button');
+    boton.classList.add('nuevo__record--boton');
+    boton.id = 'botonGuardar';
+    boton.textContent = 'Guardar record';
+    boton.addEventListener('click', () => {
+        console.log('click');
+    });
+    
 
 
-    const cointainerRecord = document.createElement('div');
-    cointainerRecord.classList.add('container__record');
-    cointainerRecord.append(textContainer, record);
+    const containerRecord = document.createElement('div');
+    containerRecord.classList.add('container__record');
+    containerRecord.id = 'containerRecord';
+    containerRecord.append(textContainer, record, anotherText, boton);
 
-    return cointainerRecord;
+    return containerRecord;
 }
 
 export { NuevoRecord };

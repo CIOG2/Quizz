@@ -15,6 +15,8 @@
     text-align: center;
     margin-top: 50px;
     animation: zoom-in-zoom-out 1s ease-in-out;
+    text-shadow: -2px 2px 10px black;
+    user-select: none;
 }
 
 .nuevo__record--record{
@@ -23,18 +25,38 @@
     color: var(--Cuarto-Color);
     text-align: center;
     margin-top: 50px;    
+    text-shadow: -2px 2px 10px black;
+    user-select: none;
 }
 
-.zoom-in-out-box {
-    margin: 24px;
-    width: 50px;
-    height: 50px;
-    border:1px solid green;
-    background: #f50057;
+.nuevo__record--anotherText{
+    font-size: 4rem;
+    font-weight: bold;
+    color: var(--Primer-Color);
+    transition: all .5s ease-in-out;
+    text-align: center;
+    user-select: none;
+}
 
-  }
+
+.nuevo__record--boton{
+    display: none;
+    width: 170px;
+    height: 60px;
+    margin-top: 50px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--Cuarto-Color);
+    background-color: var(--Tercer-Color);
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 1px 1px 10px black;
+    user-select: none;
+}
   
-  @keyframes zoom-in-zoom-out {
+
+@keyframes zoom-in-zoom-out {
     0% {
         transform: translateY(-50px);
         font-size: 1rem;
@@ -45,5 +67,5 @@
     100% {
         transform: translateY(0px);
         font-size: 7rem;
-    }
-  }
+}
+}
