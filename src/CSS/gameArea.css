@@ -30,6 +30,9 @@
     margin-bottom: 20px;
     border-radius: 10px;
 }
+.image__preload{
+    display: none;
+}
 
 
 .options__container{

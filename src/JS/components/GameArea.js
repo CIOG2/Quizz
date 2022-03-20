@@ -103,10 +103,17 @@ function GameArea(data) {
     image.src = data[0].image;
     image.id = 'image';
 
+    const imagePreload = document.createElement('img');
+    imagePreload.classList.add('image__preload');
+    imagePreload.src = data[1].image;
+    imagePreload.id = 'imagePreload';
+    
+    
+    
     //Elementos de la parte superior del juego
     const containerSuperior = document.createElement('div');
     containerSuperior.classList.add('container__superior');
-    containerSuperior.append( timeBar, pregunta, image);
+    containerSuperior.append( timeBar, pregunta, image, imagePreload);
 
     //Contendor general donde se renderizan los elementos
     const gameAreaContainer = document.createElement('div');

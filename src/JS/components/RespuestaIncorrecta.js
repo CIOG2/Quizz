@@ -9,6 +9,7 @@ const RespuestaIncorrecta = () => {
 
     const containerAlert = document.createElement('div');
     containerAlert.classList.add('container__alert--answer-incorrect');
+    containerAlert.id = 'containerAlert';
     containerAlert.append(alert);
 
 

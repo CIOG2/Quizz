@@ -40,6 +40,9 @@ function tiempo() {
         clearInterval(intervalo);
         setTimeout(() => {
             document.getElementById('gameArea').remove();
+            if (document.getElementById('containerAlert')) {
+                document.getElementById('containerAlert').remove();
+            }
         }, 1000);
         app.append(GameOver());
         setTimeout(() => {
@@ -104,6 +107,7 @@ const respuestaIncorrectaTime = () => {
 //funcion que cambia las preguntas
 const CambiarPregunta = () => {
     const pregunta = document.getElementById('pregunta');
+    const imagePreload = document.getElementById('imagePreload');
     const image = document.getElementById('image');
     const option1 = document.getElementById('option1');
     const option2 = document.getElementById('option2');
@@ -114,6 +118,8 @@ const CambiarPregunta = () => {
     let nuevoOrden = ramdonNumbers(datos[contador].opciones);
 
     pregunta.textContent = datos[contador].pregunta;
+    console.log(datos[contador + 1].image);
+    imagePreload.src = datos[contador + 1].image;
     image.src = datos[contador].image;
     option1.textContent = nuevoOrden[0];
     option2.textContent = nuevoOrden[1];
