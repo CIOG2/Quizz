@@ -118,7 +118,6 @@ const CambiarPregunta = () => {
     let nuevoOrden = ramdonNumbers(datos[contador].opciones);
 
     pregunta.textContent = datos[contador].pregunta;
-    console.log(datos[contador + 1].image);
     imagePreload.src = datos[contador + 1].image;
     image.src = datos[contador].image;
     option1.textContent = nuevoOrden[0];
